@@ -1,0 +1,14 @@
+﻿<Button 
+    x:Class="Lowajo.Themes.Components.ImageButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <Button.Template>
+        <ControlTemplate TargetType="{x:Type Button}">
+            <Grid>
+                <Image Source="{Binding Path=Source, RelativeSource={RelativeSource AncestorType=Button}}"
+                       Stretch="Uniform"/>
+            </Grid>
+        </ControlTemplate>
+    </Button.Template>
+</Button>

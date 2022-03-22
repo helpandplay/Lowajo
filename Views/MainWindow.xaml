@@ -3,9 +3,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:component="clr-namespace:Lowajo.Themes.Components"
         mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Width="150"
+        Height="40"
+        Background="Transparent"
         >
-    <Grid>
-
-    </Grid>
+    <Border Background="{StaticResource White}"
+            CornerRadius="10">
+        <Grid Margin="10,0">
+            <Grid.Resources>
+                <Style TargetType="component:ImageButton">
+                    <Setter Property="Height" Value="20"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Close.png"
+                               Grid.Column="0"/>
+            <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Coin.png"
+                               Grid.Column="1"/>
+            <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Dropper.png"
+                               Grid.Column="2"/>
+            <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Search.png"
+                               Grid.Column="3"/>
+        </Grid>
+    </Border>
 </Window>
