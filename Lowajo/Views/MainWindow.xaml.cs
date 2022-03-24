@@ -12,6 +12,9 @@ namespace Lowajo
         {
             InitializeComponent();
             DataContext = App.Current.Services.GetService(typeof(MainViewModel));
+
+            this.Left = (SystemParameters.PrimaryScreenWidth - this.Width) / 2;
+            this.Top = 0;
         }
     }
 }

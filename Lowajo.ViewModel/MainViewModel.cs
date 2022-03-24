@@ -15,6 +15,13 @@ namespace Lowajo.ViewModel
 
         }
 
+        public void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            if (sender is Window view)
+            {
+                view.Topmost = true;
+            }
+        }
         public void OnMouseEnter(object sender, MouseEventArgs e)
         {
             if (!isMouseEnter) isMouseEnter = true;

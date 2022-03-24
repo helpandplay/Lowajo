@@ -11,11 +11,15 @@
         x:Name="Dock"
         WindowStyle="None"
         ResizeMode="NoResize"
+        WindowStartupLocation="Manual"
         Width="150"
         Height="50"
         Background="Transparent"
         >
     <behavior:Interaction.Triggers>
+        <behavior:EventTrigger EventName="Loaded">
+            <behavior:CallMethodAction MethodName="OnLoaded" TargetObject="{Binding}"/>
+        </behavior:EventTrigger>
         <behavior:EventTrigger EventName="MouseDown">
             <behavior:CallMethodAction MethodName="OnMouseDown" TargetObject="{Binding}"/>
         </behavior:EventTrigger>
@@ -32,6 +36,28 @@
             <behavior:CallMethodAction MethodName="OnMouseLeave" TargetObject="{Binding}"/>
         </behavior:EventTrigger>
     </behavior:Interaction.Triggers>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="MouseLeave">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation To="0.2" Duration="0:0:0:0.5"
+                                     AccelerationRatio="0.2"
+                                     DecelerationRatio="0.2"
+                                     Storyboard.TargetProperty="Opacity"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="MouseEnter">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation To="1.0" Duration="0:0:0:0.5"
+                                     AccelerationRatio="0.2"
+                                     DecelerationRatio="0.2"
+                                     Storyboard.TargetProperty="Opacity"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
     <Border Background="{StaticResource White}"
             CornerRadius="10">
         <Grid Margin="10,0">
