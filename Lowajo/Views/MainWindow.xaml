@@ -4,13 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:component="clr-namespace:Lowajo.Themes.Components"
+        xmlns:vm="clr-namespace:Lowajo.ViewModel;assembly=Lowajo.ViewModel"
+        xmlns:behavior="http://schemas.microsoft.com/xaml/behaviors"
+        d:DataContext="{d:DesignInstance Type={x:Type vm:MainViewModel}}"
         mc:Ignorable="d"
+        x:Name="Dock"
         WindowStyle="None"
         ResizeMode="NoResize"
         Width="150"
-        Height="40"
+        Height="50"
         Background="Transparent"
         >
+    <behavior:Interaction.Triggers>
+        <behavior:EventTrigger EventName="MouseDown">
+            <behavior:CallMethodAction MethodName="OnMouseDown" TargetObject="{Binding}"/>
+        </behavior:EventTrigger>
+        <behavior:EventTrigger EventName="KeyDown">
+            <behavior:CallMethodAction MethodName="OnCtrlKeyDown" TargetObject="{Binding}"/>
+        </behavior:EventTrigger>
+        <behavior:EventTrigger EventName="KeyUp">
+            <behavior:CallMethodAction MethodName="OnCtrlKeyUp" TargetObject="{Binding}"/>
+        </behavior:EventTrigger>
+        <behavior:EventTrigger EventName="MouseEnter">
+            <behavior:CallMethodAction MethodName="OnMouseEnter" TargetObject="{Binding}"/>
+        </behavior:EventTrigger>
+        <behavior:EventTrigger EventName="MouseLeave">
+            <behavior:CallMethodAction MethodName="OnMouseLeave" TargetObject="{Binding}"/>
+        </behavior:EventTrigger>
+    </behavior:Interaction.Triggers>
     <Border Background="{StaticResource White}"
             CornerRadius="10">
         <Grid Margin="10,0">
