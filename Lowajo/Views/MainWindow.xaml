@@ -59,7 +59,7 @@
             </BeginStoryboard>
         </EventTrigger>
     </Window.Triggers>
-    <Border CornerRadius="20" Background="{StaticResource White}">
+    <Border CornerRadius="20" Background="{DynamicResource }">
         <Grid Margin="10,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -68,16 +68,18 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Close.png"/>
+                <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Search.png"/>
+
             </Grid>
             <Grid Grid.Column="1">
-                <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Coin.png"/>
+                <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Search.png"/>
             </Grid>
             <Grid Grid.Column="2">
                 <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Dropper.png"/>
             </Grid>
             <Grid Grid.Column="3">
-                <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Search.png"/>
+                <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Close.png"/>
+
             </Grid>
         </Grid>
     </Border>

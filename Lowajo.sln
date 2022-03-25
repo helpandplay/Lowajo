@@ -7,6 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lowajo", "Lowajo\Lowajo.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lowajo.ViewModel", "Lowajo.ViewModel\Lowajo.ViewModel.csproj", "{8B6B5EB9-DC71-4E07-BC38-34BFF12B30BB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6DCD9EE-5901-4547-933E-9CDE702AB936}"
+	ProjectSection(SolutionItems) = preProject
+		Idea.txt = Idea.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

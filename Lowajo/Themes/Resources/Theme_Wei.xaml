@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="MainColor" Color="#dcd6d4"/>
+    <SolidColorBrush x:Key="BaseColor" Color="#694042"/>
+    <BitmapImage x:Key="Logo" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/Wei/Logo_Wei.png"/>
+    <BitmapImage x:Key="Coin" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/Wei/Coin_Wei.png"/>
+    <BitmapImage x:Key="Alarm" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/Wei/Alarm_Wei.png"/>
+    <BitmapImage x:Key="Close" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/Wei/Close_Wei.png"/>
+    <BitmapImage x:Key="Setting" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/Wei/Setting_Wei.png"/>
+</ResourceDictionary>

@@ -10,10 +10,40 @@
   <ItemGroup>
     <None Remove="Assets\Cursors\grab.cur" />
     <None Remove="Assets\Cursors\grabbing.cur" />
+    <None Remove="Assets\Images\Abrelshud\Alarm_Abrelshud.png" />
+    <None Remove="Assets\Images\Abrelshud\Close_Abrelshud.png" />
+    <None Remove="Assets\Images\Abrelshud\Coin_Abrelshud.png" />
+    <None Remove="Assets\Images\Abrelshud\Logo_Abrelshud.png" />
+    <None Remove="Assets\Images\Abrelshud\Setting_Abrelshud.png" />
     <None Remove="Assets\Images\Close.png" />
     <None Remove="Assets\Images\Coin.png" />
     <None Remove="Assets\Images\Dropper.png" />
+    <None Remove="Assets\Images\KokouSaton\Alarm_KoukuSaton.png" />
+    <None Remove="Assets\Images\KokouSaton\Close_KoukuSaton.png" />
+    <None Remove="Assets\Images\KokouSaton\Coin_KoukuSaton.png" />
+    <None Remove="Assets\Images\KokouSaton\Logo_KoukuSaton.png" />
+    <None Remove="Assets\Images\KokouSaton\Setting_KoukuSaton.png" />
+    <None Remove="Assets\Images\Ninaveh\Alarm_Ninaveh.png" />
+    <None Remove="Assets\Images\Ninaveh\Close_Ninaveh.png" />
+    <None Remove="Assets\Images\Ninaveh\Coin_Ninaveh.png" />
+    <None Remove="Assets\Images\Ninaveh\Logo_Ninaveh.png" />
+    <None Remove="Assets\Images\Ninaveh\Setting_Ninaveh.png" />
     <None Remove="Assets\Images\Search.png" />
+    <None Remove="Assets\Images\Sillian\Alarm_Sillian.png" />
+    <None Remove="Assets\Images\Sillian\Close_Sillian.png" />
+    <None Remove="Assets\Images\Sillian\Coin_Sillian.png" />
+    <None Remove="Assets\Images\Sillian\Logo_Sillian.png" />
+    <None Remove="Assets\Images\Sillian\Setting_Sillian.png" />
+    <None Remove="Assets\Images\Valtan\Alarm_Valtan.png" />
+    <None Remove="Assets\Images\Valtan\Close_Valtan.png" />
+    <None Remove="Assets\Images\Valtan\Coin_Valtan.png" />
+    <None Remove="Assets\Images\Valtan\Logo_Valtan.png" />
+    <None Remove="Assets\Images\Valtan\Setting_Valtan.png" />
+    <None Remove="Assets\Images\Wei\Alarm_Wei.png" />
+    <None Remove="Assets\Images\Wei\Close_Wei.png" />
+    <None Remove="Assets\Images\Wei\Coin_Wei.png" />
+    <None Remove="Assets\Images\Wei\Logo_Wei.png" />
+    <None Remove="Assets\Images\Wei\Setting_Wei.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,10 +52,40 @@
 
   <ItemGroup>
     <Resource Include="Assets\Cursors\grabbing.cur" />
+    <Resource Include="Assets\Images\Abrelshud\Alarm_Abrelshud.png" />
+    <Resource Include="Assets\Images\Abrelshud\Close_Abrelshud.png" />
+    <Resource Include="Assets\Images\Abrelshud\Coin_Abrelshud.png" />
+    <Resource Include="Assets\Images\Abrelshud\Logo_Abrelshud.png" />
+    <Resource Include="Assets\Images\Abrelshud\Setting_Abrelshud.png" />
     <Resource Include="Assets\Images\Close.png" />
     <Resource Include="Assets\Images\Coin.png" />
     <Resource Include="Assets\Images\Dropper.png" />
+    <Resource Include="Assets\Images\KokouSaton\Alarm_KoukuSaton.png" />
+    <Resource Include="Assets\Images\KokouSaton\Close_KoukuSaton.png" />
+    <Resource Include="Assets\Images\KokouSaton\Coin_KoukuSaton.png" />
+    <Resource Include="Assets\Images\KokouSaton\Logo_KoukuSaton.png" />
+    <Resource Include="Assets\Images\KokouSaton\Setting_KoukuSaton.png" />
+    <Resource Include="Assets\Images\Ninaveh\Alarm_Ninaveh.png" />
+    <Resource Include="Assets\Images\Ninaveh\Close_Ninaveh.png" />
+    <Resource Include="Assets\Images\Ninaveh\Coin_Ninaveh.png" />
+    <Resource Include="Assets\Images\Ninaveh\Logo_Ninaveh.png" />
+    <Resource Include="Assets\Images\Ninaveh\Setting_Ninaveh.png" />
     <Resource Include="Assets\Images\Search.png" />
+    <Resource Include="Assets\Images\Sillian\Alarm_Sillian.png" />
+    <Resource Include="Assets\Images\Sillian\Close_Sillian.png" />
+    <Resource Include="Assets\Images\Sillian\Coin_Sillian.png" />
+    <Resource Include="Assets\Images\Sillian\Logo_Sillian.png" />
+    <Resource Include="Assets\Images\Sillian\Setting_Sillian.png" />
+    <Resource Include="Assets\Images\Valtan\Alarm_Valtan.png" />
+    <Resource Include="Assets\Images\Valtan\Close_Valtan.png" />
+    <Resource Include="Assets\Images\Valtan\Coin_Valtan.png" />
+    <Resource Include="Assets\Images\Valtan\Logo_Valtan.png" />
+    <Resource Include="Assets\Images\Valtan\Setting_Valtan.png" />
+    <Resource Include="Assets\Images\Wei\Alarm_Wei.png" />
+    <Resource Include="Assets\Images\Wei\Close_Wei.png" />
+    <Resource Include="Assets\Images\Wei\Coin_Wei.png" />
+    <Resource Include="Assets\Images\Wei\Logo_Wei.png" />
+    <Resource Include="Assets\Images\Wei\Setting_Wei.png" />
   </ItemGroup>
 
   <ItemGroup>
