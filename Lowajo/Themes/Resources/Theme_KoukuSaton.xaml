@@ -1,10 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <SolidColorBrush x:Key="MainColor" Color="#c52517"/>
     <SolidColorBrush x:Key="BaseColor" Color="#1a1a1a"/>
     <BitmapImage x:Key="Logo" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/KoukuSaton/Logo_KoukuSaton.png"/>
-    <BitmapImage x:Key="Coin" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/KoukuSaton/Coin_KoukuSaton.png"/>
-    <BitmapImage x:Key="Alarm" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/KoukuSaton/Alarm_KoukuSaton.png"/>
-    <BitmapImage x:Key="Close" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/KoukuSaton/Close_KoukuSaton.png"/>
-    <BitmapImage x:Key="Setting" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/KoukuSaton/Setting_KoukuSaton.png"/>
+    <sys:String x:Key="Coin">pack://application:,,,/Lowajo;component/Assets/Images/KoukuSaton/Coin_KoukuSaton.png</sys:String>
+    <sys:String x:Key="Alarm">pack://application:,,,/Lowajo;component/Assets/Images/KoukuSaton/Alarm_KoukuSaton.png</sys:String>
+    <sys:String x:Key="Close">pack://application:,,,/Lowajo;component/Assets/Images/KoukuSaton/Close_KoukuSaton.png</sys:String>
+    <sys:String x:Key="Setting">pack://application:,,,/Lowajo;component/Assets/Images/KoukuSaton/Setting_KoukuSaton.png</sys:String>
 </ResourceDictionary>

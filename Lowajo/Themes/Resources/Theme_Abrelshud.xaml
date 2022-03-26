@@ -1,10 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <SolidColorBrush x:Key="MainColor" Color="#c8cbde"/>
     <SolidColorBrush x:Key="BaseColor" Color="#3e4386"/>
     <BitmapImage x:Key="Logo" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/Abrelshud/Logo_Abrelshud.png"/>
-    <BitmapImage x:Key="Coin" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/Abrelshud/Coin_Abrelshud.png"/>
-    <BitmapImage x:Key="Alarm" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/Abrelshud/Alarm_Abrelshud.png"/>
-    <BitmapImage x:Key="Close" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/Abrelshud/Close_Abrelshud.png"/>
-    <BitmapImage x:Key="Setting" UriSource="pack://application:,,,/Lowajo;component/Assets/Images/Abrelshud/Setting_Abrelshud.png"/>
+    <sys:String x:Key="Coin">pack://application:,,,/Lowajo;component/Assets/Images/Abrelshud/Coin_Abrelshud.png</sys:String>
+    <sys:String x:Key="Alarm">pack://application:,,,/Lowajo;component/Assets/Images/Abrelshud/Alarm_Abrelshud.png</sys:String>
+    <sys:String x:Key="Close">pack://application:,,,/Lowajo;component/Assets/Images/Abrelshud/Close_Abrelshud.png</sys:String>
+    <sys:String x:Key="Setting">pack://application:,,,/Lowajo;component/Assets/Images/Abrelshud/Setting_Abrelshud.png</sys:String>
 </ResourceDictionary>

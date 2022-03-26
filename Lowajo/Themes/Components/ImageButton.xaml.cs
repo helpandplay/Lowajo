@@ -11,6 +11,7 @@ namespace Lowajo.Themes.Components
         private readonly static DependencyProperty SourceProperty =
             DependencyProperty.Register(nameof(Source), typeof(string), typeof(ImageButton),
                 new PropertyMetadata(string.Empty));
+
         static ImageButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ImageButton), new FrameworkPropertyMetadata(typeof(ImageButton)));

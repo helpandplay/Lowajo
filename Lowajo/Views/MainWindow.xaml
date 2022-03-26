@@ -12,7 +12,7 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="Manual"
-        Width="150"
+        Width="170"
         Height="50"
         AllowsTransparency="True"
         Background="Transparent"
@@ -21,20 +21,8 @@
         <behavior:EventTrigger EventName="Loaded">
             <behavior:CallMethodAction MethodName="OnLoaded" TargetObject="{Binding}"/>
         </behavior:EventTrigger>
-        <behavior:EventTrigger EventName="MouseDown">
-            <behavior:CallMethodAction MethodName="OnMouseDown" TargetObject="{Binding}"/>
-        </behavior:EventTrigger>
-        <behavior:EventTrigger EventName="KeyDown">
-            <behavior:CallMethodAction MethodName="OnCtrlKeyDown" TargetObject="{Binding}"/>
-        </behavior:EventTrigger>
-        <behavior:EventTrigger EventName="KeyUp">
-            <behavior:CallMethodAction MethodName="OnCtrlKeyUp" TargetObject="{Binding}"/>
-        </behavior:EventTrigger>
-        <behavior:EventTrigger EventName="MouseEnter">
-            <behavior:CallMethodAction MethodName="OnMouseEnter" TargetObject="{Binding}"/>
-        </behavior:EventTrigger>
-        <behavior:EventTrigger EventName="MouseLeave">
-            <behavior:CallMethodAction MethodName="OnMouseLeave" TargetObject="{Binding}"/>
+        <behavior:EventTrigger EventName="MouseMove">
+            <behavior:CallMethodAction MethodName="OnMouseMove" TargetObject="{Binding}"/>
         </behavior:EventTrigger>
     </behavior:Interaction.Triggers>
     <Window.Triggers>
@@ -60,26 +48,43 @@
         </EventTrigger>
     </Window.Triggers>
     <Border CornerRadius="20" Background="{DynamicResource BaseColor}">
-        <Grid Margin="10,0">
+        <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
-                <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Search.png"/>
-
+            <Grid Grid.Column="0" Margin="20,0,10,0" x:Name="LogoContainer">
+                <behavior:Interaction.Triggers>
+                    <behavior:EventTrigger EventName="MouseDown">
+                        <behavior:CallMethodAction MethodName="OnMouseDown" TargetObject="{Binding}"/>
+                    </behavior:EventTrigger>
+                    <behavior:EventTrigger EventName="MouseUp">
+                        <behavior:CallMethodAction MethodName="OnMouseUp" TargetObject="{Binding}"/>
+                    </behavior:EventTrigger>
+                    <behavior:EventTrigger EventName="MouseEnter">
+                        <behavior:CallMethodAction MethodName="OnMouseEnter" TargetObject="{Binding}"/>
+                    </behavior:EventTrigger>
+                    <behavior:EventTrigger EventName="MouseLeave">
+                        <behavior:CallMethodAction MethodName="OnMouseLeave" TargetObject="{Binding}"/>
+                    </behavior:EventTrigger>
+                </behavior:Interaction.Triggers>
+                <Image Source="{DynamicResource Logo}" Height="20"/>
             </Grid>
-            <Grid Grid.Column="1">
-                <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Search.png"/>
-            </Grid>
-            <Grid Grid.Column="2">
-                <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Dropper.png"/>
-            </Grid>
-            <Grid Grid.Column="3">
-                <component:ImageButton Source="pack://application:,,,/Lowajo;component/Assets/Images/Close.png"/>
-
+            <Grid Margin="10,0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <component:ImageButton Source="{DynamicResource Coin}"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <component:ImageButton Source="{DynamicResource Alarm}"/>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <component:ImageButton Source="{DynamicResource Setting}"/>
+                </Grid>
             </Grid>
         </Grid>
     </Border>

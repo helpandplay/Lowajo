@@ -18,7 +18,7 @@ namespace Lowajo
         {
             Services = SetServices();
             this.InitializeComponent();
-            this.ChangeTheme(new Uri("/Themes/Resources/Theme_Abrelshud.xaml", UriKind.Relative));
+            //this.ChangeTheme(new Uri("/Themes/Resources/Theme_Abrelshud.xaml", UriKind.Relative));
         }
 
         private static IServiceProvider SetServices()
