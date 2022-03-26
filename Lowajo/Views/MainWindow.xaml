@@ -59,7 +59,7 @@
             </BeginStoryboard>
         </EventTrigger>
     </Window.Triggers>
-    <Border CornerRadius="20" Background="{DynamicResource }">
+    <Border CornerRadius="20" Background="{DynamicResource BaseColor}">
         <Grid Margin="10,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>

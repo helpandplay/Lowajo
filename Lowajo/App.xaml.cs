@@ -1,6 +1,7 @@
 ﻿using Lowajo.ViewModel;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 
 namespace Lowajo
@@ -11,12 +12,13 @@ namespace Lowajo
     public partial class App : Application
     {
         public IServiceProvider Services { get; }
-        public ResourceDictionary ThemeDictionary => Resources.MergedDictionaries[0];
+        public Collection<ResourceDictionary> MergedDictionary => Resources.MergedDictionaries;
         public new static App Current => (App)Application.Current;
         public App()
         {
             Services = SetServices();
             this.InitializeComponent();
+            this.ChangeTheme(new Uri("/Themes/Resources/Theme_Abrelshud.xaml", UriKind.Relative));
         }
 
         private static IServiceProvider SetServices()
@@ -30,8 +32,8 @@ namespace Lowajo
 
         public void ChangeTheme(Uri themePath)
         {
-            ThemeDictionary.MergedDictionaries.Clear();
-            ThemeDictionary.MergedDictionaries.Add(new ResourceDictionary() { Source = themePath });
+            MergedDictionary.RemoveAt(0);
+            MergedDictionary.Insert(0, new ResourceDictionary() { Source = themePath });
         }
     }
 }
