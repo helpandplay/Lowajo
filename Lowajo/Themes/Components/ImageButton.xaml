@@ -2,6 +2,7 @@
     x:Class="Lowajo.Themes.Components.ImageButton"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Command="{Binding RelativeSource={RelativeSource Mode=Self}, Path=ClickCommand}"
     >
     <Button.Style>
         <Style TargetType="Button">
