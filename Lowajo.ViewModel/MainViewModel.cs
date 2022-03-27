@@ -8,7 +8,6 @@ namespace Lowajo.ViewModel
     public class MainViewModel : ViewModelBase
     {
         private bool isMouseEnter = false;
-        private Window? view = null;
 
         public MainViewModel()
         {
@@ -57,41 +56,19 @@ namespace Lowajo.ViewModel
         }
 
         /// <summary>
-        /// 마우스를 클릭하면 마우스 포인터를 Grabbing으로 바꾸고 드래그한다.
+        /// 마우스를 클릭하면 마우스 포인터를 Grabbing으로 바꾼다.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton != MouseButtonState.Pressed) return;
-            if (sender is not Grid imageContainer) return;
+            if (e.LeftButton != MouseButtonState.Pressed ||
+                sender is not Grid imageContainer ||
+                !isMouseEnter) return;
 
-            if (isMouseEnter)
-            {
-                object CursorGrabbing = Application.Current.TryFindResource("CursorGrabbing");
-                if (CursorGrabbing != null && CursorGrabbing is TextBlock tb)
-                    imageContainer.Cursor = tb.Cursor;
-            }
-
-            bool isFindView = false;
-            if (view is null)
-            {
-                DependencyObject findElement = LogicalTreeHelper.GetParent(imageContainer);
-                while (!isFindView)
-                {
-                    if (findElement is Window find)
-                    {
-                        view = find;
-                        isFindView = true;
-                    }
-                    else
-                    {
-                        findElement = LogicalTreeHelper.GetParent(findElement);
-                    }
-                }
-            }
-
-            view?.DragMove();
+            object CursorGrabbing = Application.Current.TryFindResource("CursorGrabbing");
+            if (CursorGrabbing != null && CursorGrabbing is TextBlock tb)
+                imageContainer.Cursor = tb.Cursor;
         }
         /// <summary>
         /// 마우스 클릭을 떼면 마우스 포인터를 Grab으로 바꾼다.
@@ -100,22 +77,26 @@ namespace Lowajo.ViewModel
         /// <param name="e"></param>
         public void OnMouseUp(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton != MouseButtonState.Released) return;
-            if (sender is not Grid imageContainer) return;
-            if (!isMouseEnter) return;
+            if (e.LeftButton != MouseButtonState.Released ||
+                sender is not Grid imageContainer ||
+                !isMouseEnter) return;
 
             object CursorGrab = Application.Current.TryFindResource("CursorGrab");
             if (CursorGrab != null && CursorGrab is TextBlock tb)
                 imageContainer.Cursor = tb.Cursor;
         }
-
+        /// <summary>
+        /// 마우스를 따라 드래깅된다.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnMouseMove(object sender, MouseEventArgs e)
         {
-            if (sender is not Window window) return;
-            if (!isMouseEnter) return;
-            if (e.LeftButton != MouseButtonState.Pressed) return;
-            System.Diagnostics.Debug.WriteLine($"" +
-                $"ML: {SystemParameters.WorkArea.Left}, WL: {window.Left}");
+            if (e.LeftButton != MouseButtonState.Pressed ||
+               sender is not Window window ||
+               !isMouseEnter) return;
+
+            window.DragMove();
         }
     }
 }

@@ -83,7 +83,8 @@
                     <component:ImageButton Source="{DynamicResource Alarm}"/>
                 </Grid>
                 <Grid Grid.Column="2">
-                    <component:ImageButton Source="{DynamicResource Setting}"/>
+                    <component:ImageButton Source="{DynamicResource Setting}"
+                                           />
                 </Grid>
             </Grid>
         </Grid>
