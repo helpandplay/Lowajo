@@ -1,6 +1,7 @@
 ﻿using Lowajo.ViewModel.Base;
+using Microsoft.Toolkit.Mvvm.Input;
+using System;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Lowajo.ViewModel
@@ -8,8 +9,18 @@ namespace Lowajo.ViewModel
     public class MainViewModel : ViewModelBase
     {
         private bool isMouseEnter = false;
+        private bool isClicking = false;
+        private readonly FrameworkElement controlCursorGrab;
+
+        public ICommand OnClickSettingCommand { get; private set; }
 
         public MainViewModel()
+        {
+            OnClickSettingCommand = new RelayCommand(OnClickSetting);
+            controlCursorGrab = (FrameworkElement)Application.Current.TryFindResource("CursorGrab");
+        }
+
+        private void OnClickSetting()
         {
 
         }
@@ -27,19 +38,18 @@ namespace Lowajo.ViewModel
             }
         }
         /// <summary>
-        /// 마우스가 컨트롤 안으로 들어오면 마우스 포인터를 Grab으로 바꾼다.
+        /// 마우스가 컨트롤 안으로 들어오면 컨트롤을 포커싱한다.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void OnMouseEnter(object sender, MouseEventArgs e)
         {
-            if (!isMouseEnter) isMouseEnter = true;
-            if (sender is Grid imageContainer)
-            {
-                object CursorGrab = Application.Current.TryFindResource("CursorGrab");
-                if (CursorGrab == null || CursorGrab is not TextBlock tb) return;
-                imageContainer.Cursor = tb.Cursor;
-            }
+            if (isClicking ||
+                isMouseEnter ||
+                sender is not FrameworkElement element) return;
+
+            isMouseEnter = true;
+            element.Cursor = controlCursorGrab.Cursor;
         }
         /// <summary>
         /// 마우스가 컨트롤 밖으로 나가면 마우스 포인터를 Arrow로 바꾼다.
@@ -48,13 +58,13 @@ namespace Lowajo.ViewModel
         /// <param name="e"></param>
         public void OnMouseLeave(object sender, MouseEventArgs e)
         {
-            if (isMouseEnter) isMouseEnter = false;
-            if (isMouseEnter && sender is Window window)
-            {
-                window.Cursor = Cursors.Arrow;
-            }
-        }
+            if (isClicking ||
+                !isMouseEnter ||
+                sender is not FrameworkElement element) return;
 
+            isMouseEnter = false;
+            element.Cursor = Cursors.Arrow;
+        }
         /// <summary>
         /// 마우스를 클릭하면 마우스 포인터를 Grabbing으로 바꾼다.
         /// </summary>
@@ -62,41 +72,36 @@ namespace Lowajo.ViewModel
         /// <param name="e"></param>
         public void OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton != MouseButtonState.Pressed ||
-                sender is not Grid imageContainer ||
-                !isMouseEnter) return;
+            if (isClicking ||
+                !isMouseEnter ||
+                e.LeftButton != MouseButtonState.Pressed
+                ) return;
+            if (sender is not FrameworkElement element) return;
 
+            isClicking = true;
             object CursorGrabbing = Application.Current.TryFindResource("CursorGrabbing");
-            if (CursorGrabbing != null && CursorGrabbing is TextBlock tb)
-                imageContainer.Cursor = tb.Cursor;
+            element.Cursor = (CursorGrabbing as FrameworkElement)?.Cursor;
+
+            element.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                Application.Current.MainWindow.DragMove();
+                if (e.LeftButton == MouseButtonState.Released) OnMouseUp(sender, e);
+            }));
         }
         /// <summary>
         /// 마우스 클릭을 떼면 마우스 포인터를 Grab으로 바꾼다.
+        /// 이 이벤트는 뷰와 연결되지 않는다.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void OnMouseUp(object sender, MouseButtonEventArgs e)
+        private void OnMouseUp(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton != MouseButtonState.Released ||
-                sender is not Grid imageContainer ||
-                !isMouseEnter) return;
+            if (!isClicking ||
+                e.LeftButton != MouseButtonState.Released ||
+                sender is not FrameworkElement element) return;
 
-            object CursorGrab = Application.Current.TryFindResource("CursorGrab");
-            if (CursorGrab != null && CursorGrab is TextBlock tb)
-                imageContainer.Cursor = tb.Cursor;
-        }
-        /// <summary>
-        /// 마우스를 따라 드래깅된다.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void OnMouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.LeftButton != MouseButtonState.Pressed ||
-               sender is not Window window ||
-               !isMouseEnter) return;
-
-            window.DragMove();
+            element.Cursor = controlCursorGrab.Cursor;
+            isClicking = false;
         }
     }
 }
