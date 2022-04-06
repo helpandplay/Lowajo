@@ -3,19 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:component="clr-namespace:Lowajo.Themes.Components"
+        xmlns:component="clr-namespace:Lowajo.Themes.Components.Behind"
         xmlns:vm="clr-namespace:Lowajo.ViewModel;assembly=Lowajo.ViewModel"
         xmlns:behavior="http://schemas.microsoft.com/xaml/behaviors"
         d:DataContext="{d:DesignInstance Type={x:Type vm:MainViewModel}}"
         mc:Ignorable="d"
         x:Name="Dock"
-        WindowStyle="None"
-        ResizeMode="NoResize"
+        Style="{StaticResource MainWindowStyle}"
         WindowStartupLocation="Manual"
         Width="170"
         Height="50"
-        AllowsTransparency="True"
-        Background="Transparent"
         >
     <behavior:Interaction.Triggers>
         <behavior:EventTrigger EventName="Loaded">
