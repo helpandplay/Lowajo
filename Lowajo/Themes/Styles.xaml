@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Themes/Resources/Bases.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style TargetType="{x:Type GroupBox}" BasedOn="{StaticResource GroupBox_Base}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="GroupBox">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0">
+                            <Border Padding="7,7,7,0" Background="{StaticResource BaseColor}" HorizontalAlignment="Left" Margin="0,0,0,-1"
+                                    CornerRadius="7,7,0,0">
+                                <TextBlock Foreground="{StaticResource ColorTextWhite}" VerticalAlignment="Center">
+                                    <ContentPresenter ContentSource="Header" Margin="2" RecognizesAccessKey="True"/>
+                                </TextBlock>
+                            </Border>
+                        </Border>
+
+                        <Grid Grid.Row="1" Background="{DynamicResource BaseColor}">
+                            <ContentPresenter Margin="10"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource RadioButton_Base}">
+        
+    </Style>
+</ResourceDictionary>

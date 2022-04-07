@@ -5,5 +5,9 @@
         <ResourceDictionary Source="/Themes/Resources/Theme_Window.xaml"/>
         
         <ResourceDictionary Source="/Themes/Components/UI/ImageButton.xaml"/>
+
+        <ResourceDictionary Source="/Themes/Styles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
+
+    
 </ResourceDictionary>

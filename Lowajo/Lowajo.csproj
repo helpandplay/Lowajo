@@ -10,6 +10,12 @@
   <ItemGroup>
     <None Remove="Assets\Cursors\grab.cur" />
     <None Remove="Assets\Cursors\grabbing.cur" />
+    <None Remove="Assets\Font\Noto_Sans_KR\NotoSansKR-Black.otf" />
+    <None Remove="Assets\Font\Noto_Sans_KR\NotoSansKR-Bold.otf" />
+    <None Remove="Assets\Font\Noto_Sans_KR\NotoSansKR-Light.otf" />
+    <None Remove="Assets\Font\Noto_Sans_KR\NotoSansKR-Medium.otf" />
+    <None Remove="Assets\Font\Noto_Sans_KR\NotoSansKR-Regular.otf" />
+    <None Remove="Assets\Font\Noto_Sans_KR\NotoSansKR-Thin.otf" />
     <None Remove="Assets\Images\Abrelshud\Alarm_Abrelshud.png" />
     <None Remove="Assets\Images\Abrelshud\Close_Abrelshud.png" />
     <None Remove="Assets\Images\Abrelshud\Coin_Abrelshud.png" />
@@ -52,6 +58,12 @@
 
   <ItemGroup>
     <Resource Include="Assets\Cursors\grabbing.cur" />
+    <Resource Include="Assets\Font\Noto_Sans_KR\NotoSansKR-Black.otf" />
+    <Resource Include="Assets\Font\Noto_Sans_KR\NotoSansKR-Bold.otf" />
+    <Resource Include="Assets\Font\Noto_Sans_KR\NotoSansKR-Light.otf" />
+    <Resource Include="Assets\Font\Noto_Sans_KR\NotoSansKR-Medium.otf" />
+    <Resource Include="Assets\Font\Noto_Sans_KR\NotoSansKR-Regular.otf" />
+    <Resource Include="Assets\Font\Noto_Sans_KR\NotoSansKR-Thin.otf" />
     <Resource Include="Assets\Images\Abrelshud\Alarm_Abrelshud.png" />
     <Resource Include="Assets\Images\Abrelshud\Close_Abrelshud.png" />
     <Resource Include="Assets\Images\Abrelshud\Coin_Abrelshud.png" />
