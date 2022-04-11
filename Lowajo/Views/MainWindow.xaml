@@ -41,7 +41,7 @@
             </BeginStoryboard>
         </EventTrigger>
     </Window.Triggers>
-    <Border CornerRadius="20" Background="{DynamicResource BaseColor}">
+    <Border CornerRadius="20" Background="{DynamicResource Color_MainBrush}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
@@ -68,7 +68,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <component:ImageButton Source="{DynamicResource Coin}"/>
+                    <component:ImageButton Source="{DynamicResource Coin}" ClickCommand="{Binding OnClickCoinCommand}"/>
                 </Grid>
                 <Grid Grid.Column="1">
                     <component:ImageButton Source="{DynamicResource Alarm}"/>

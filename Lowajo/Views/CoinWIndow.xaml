@@ -1,0 +1,58 @@
+﻿<Window x:Class="Lowajo.Views.CoinWIndow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:component="clr-namespace:Lowajo.Themes.Components.Behind"
+        mc:Ignorable="d"
+        Style="{StaticResource WindowBase}"
+        Title="CoinWIndow" Height="120" Width="200">
+    <Grid Style="{StaticResource GridRoot}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <TextBlock Text="경매금 계산기" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            </Grid>
+
+            <Grid Grid.Column="1" Visibility="Hidden">
+                <component:ImageButton Source="{DynamicResource Setting}"/>
+            </Grid>
+            
+        </Grid>
+
+        <Grid Grid.Row="1" Style="{StaticResource GridRowContainer}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" >
+                <RadioButton Content="8인" IsChecked="True" Style="{StaticResource RadioButton_Base}"/>
+            </Grid>
+            <Grid Grid.Column="1" Style="{StaticResource GridColumnContainer}">
+                <RadioButton Content="4인" Style="{StaticResource RadioButton_Base}"/>
+            </Grid>
+            <Grid Grid.Column="2" Style="{StaticResource GridColumnContainer}">
+                <CheckBox Content="이득보기" HorizontalAlignment="Right"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2" Style="{StaticResource GridRowContainer}">
+            <TextBox TextAlignment="Left" />
+        </Grid>
+
+        <Grid Grid.Row="3" Style="{StaticResource GridRowContainer}">
+            <TextBlock FontWeight="Bold" Text="결과 값 : "/>
+        </Grid>
+    </Grid>
+</Window>

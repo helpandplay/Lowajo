@@ -13,11 +13,18 @@ namespace Lowajo.ViewModel
         private readonly FrameworkElement controlCursorGrab;
 
         public ICommand OnClickSettingCommand { get; private set; }
+        public ICommand OnClickCoinCommand { get; private set; }
 
         public MainViewModel()
         {
             OnClickSettingCommand = new RelayCommand(OnClickSetting);
+            OnClickCoinCommand = new RelayCommand(OnClickCoin);
             controlCursorGrab = (FrameworkElement)Application.Current.TryFindResource("CursorGrab");
+        }
+
+        private void OnClickCoin()
+        {
+            throw new NotImplementedException();
         }
 
         private void OnClickSetting()

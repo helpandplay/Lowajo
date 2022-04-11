@@ -2,10 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Themes/Resources/Cursors.xaml"/>
-        <ResourceDictionary Source="/Themes/Resources/Theme_Window.xaml"/>
-        
-        <ResourceDictionary Source="/Themes/Components/UI/ImageButton.xaml"/>
 
+        <ResourceDictionary Source="/Themes/Components/UI/ImageButton.xaml"/>
         <ResourceDictionary Source="/Themes/Styles.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 

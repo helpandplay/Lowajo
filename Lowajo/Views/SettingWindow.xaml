@@ -9,19 +9,19 @@
         Style="{StaticResource WindowBase}"
         Height="200" Width="400">
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type Grid}" x:Key="Grid_Center">
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <GroupBox Header="테마 설정">
+            <GroupBox Header="테마 설정" Style="{DynamicResource GroupBox_Default}">
                 <Grid>
-                    <Grid.Resources>
-                        <Style TargetType="{x:Type Grid}" x:Key="Grid_Center">
-                            <Setter Property="HorizontalAlignment" Value="Left"/>
-                            <Setter Property="VerticalAlignment" Value="Center"/>
-                        </Style>
-                    </Grid.Resources>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -32,30 +32,30 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource Grid_Center}">
+                    <Grid Grid.Row="0" Grid.Column="0" Style="{DynamicResource Grid_Center}">
                         <RadioButton Content="니나브"/>
                     </Grid>
-                    <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource Grid_Center}">
+                    <Grid Grid.Row="0" Grid.Column="1" Style="{DynamicResource Grid_Center}">
                         <RadioButton Content="웨이"/>
                     </Grid>
-                    <Grid Grid.Row="0" Grid.Column="2" Style="{StaticResource Grid_Center}">
+                    <Grid Grid.Row="0" Grid.Column="2" Style="{DynamicResource Grid_Center}">
                         <RadioButton Content="실리안"/>
                     </Grid>
 
-                    <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource Grid_Center}">
+                    <Grid Grid.Row="1" Grid.Column="0" Style="{DynamicResource Grid_Center}">
                         <RadioButton Content="아브렐슈드"/>
                     </Grid>
-                    <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource Grid_Center}">
+                    <Grid Grid.Row="1" Grid.Column="1" Style="{DynamicResource Grid_Center}">
                         <RadioButton Content="쿠크세이튼"/>
                     </Grid>
-                    <Grid Grid.Row="1" Grid.Column="2" Style="{StaticResource Grid_Center}">
+                    <Grid Grid.Row="1" Grid.Column="2" Style="{DynamicResource Grid_Center}">
                         <RadioButton Content="발탄"/>
                     </Grid>
                 </Grid>
             </GroupBox>
         </Grid>
         <Grid Grid.Row="1">
-            <GroupBox Header="언어 설정">
+            <GroupBox Header="언어 설정" Style="{DynamicResource GroupBox_Default}">
                 <Grid VerticalAlignment="Center">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
