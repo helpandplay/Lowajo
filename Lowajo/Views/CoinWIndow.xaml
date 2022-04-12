@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:component="clr-namespace:Lowajo.Themes.Components.Behind"
+        xmlns:vm="clr-namespace:Lowajo.ViewModel;assembly=Lowajo.ViewModel"
+        d:DataContext="{d:DesignInstance Type=vm:CoinViewModel}"
         mc:Ignorable="d"
         Style="{StaticResource WindowBase}"
         Title="CoinWIndow" Height="120" Width="200">
@@ -16,35 +17,20 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
-
-            <Grid Grid.Column="0">
-                <TextBlock Text="경매금 계산기" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
-            </Grid>
-
-            <Grid Grid.Column="1" Visibility="Hidden">
-                <component:ImageButton Source="{DynamicResource Setting}"/>
-            </Grid>
-            
+            <TextBlock Text="경매금 계산기" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
         </Grid>
 
         <Grid Grid.Row="1" Style="{StaticResource GridRowContainer}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" >
-                <RadioButton Content="8인" IsChecked="True" Style="{StaticResource RadioButton_Base}"/>
-            </Grid>
-            <Grid Grid.Column="1" Style="{StaticResource GridColumnContainer}">
-                <RadioButton Content="4인" Style="{StaticResource RadioButton_Base}"/>
-            </Grid>
-            <Grid Grid.Column="2" Style="{StaticResource GridColumnContainer}">
-                <CheckBox Content="이득보기" HorizontalAlignment="Right"/>
-            </Grid>
+                <RadioButton Grid.Column="0" Content="8인" IsChecked="{Binding IsEight}" Style="{StaticResource RadioButton_Base}"/>
+                <RadioButton Grid.Column="1" Content="4인" IsChecked="{Binding IsFour}" Style="{StaticResource RadioButton_Base}" Margin="7,0,0,0"/>
+            <CheckBox Grid.Column="3" Content="이득보기" IsChecked="{Binding IsGetBenefit}" FlowDirection="RightToLeft"/>
+
         </Grid>
 
         <Grid Grid.Row="2" Style="{StaticResource GridRowContainer}">

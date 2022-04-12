@@ -26,6 +26,7 @@ namespace Lowajo
             var services = new ServiceCollection();
 
             services.AddSingleton(typeof(MainViewModel));
+            services.AddSingleton(typeof(CoinViewModel));
 
             return services.BuildServiceProvider();
         }
