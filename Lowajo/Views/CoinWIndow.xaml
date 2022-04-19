@@ -34,11 +34,14 @@
         </Grid>
 
         <Grid Grid.Row="2" Style="{StaticResource GridRowContainer}">
-            <TextBox TextAlignment="Left" />
+            <TextBox TextAlignment="Left" Text="{Binding InputText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
 
         <Grid Grid.Row="3" Style="{StaticResource GridRowContainer}">
-            <TextBlock FontWeight="Bold" Text="결과 값 : "/>
+            <TextBlock>
+                <TextBlock Text="결과 값 : "/>
+                <TextBlock Text="{Binding ResultText, Mode=OneWay}"/>
+            </TextBlock>
         </Grid>
     </Grid>
 </Window>
