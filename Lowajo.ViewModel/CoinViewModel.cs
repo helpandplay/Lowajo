@@ -64,31 +64,40 @@ namespace Lowajo.ViewModel
                 if(VaildateInputText(value))
                 {
                     inputText = value;
+                    OnPropertyChanged(nameof(InputText));
                 }
-                OnPropertyChanged(nameof(InputText));
+            }
+        }
+        public bool IsOnlyNumberInputText { get; private set; }
+        public string ResultText
+        {
+            get
+            {
+                if(string.IsNullOrEmpty(InputText))
+                {
+                    return "Not supported calculration.";
+                }
+                return InputText;
             }
         }
 
         private bool VaildateInputText(string value)
         {
             string inputText = value.Trim();
-            Regex regex = new Regex(@"(([0-9]+\/)8\b)|(([0-9]+\/)4\b)|^[0-9]+$");
+            Regex divisionRegex = new Regex(@"(([0-9]+\/)8\b)|(([0-9]+\/)4\b)");
+            Regex onlyNumberRegex = new Regex(@"^[0-9]+$");
 
-            return regex.IsMatch(inputText);
-        }
-
-        private string resultText = string.Empty;
-        public string ResultText
-        {
-            get
+            if(divisionRegex.IsMatch(inputText))
             {
-                return resultText;
+                IsOnlyNumberInputText = false;
+                return true;
             }
-            set
+            if(onlyNumberRegex.IsMatch(inputText))
             {
-                resultText = value;
-                OnPropertyChanged(nameof(ResultText));
+                IsOnlyNumberInputText = true;
+                return true;
             }
+            return false;
         }
     }
 }

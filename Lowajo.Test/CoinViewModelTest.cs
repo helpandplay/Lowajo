@@ -110,5 +110,29 @@ namespace Lowajo.Test
 
             Assert.True(result);
         }
+        [Trait("CoinViewModel", "VaildateInputText Method Test")]
+        [Fact(DisplayName = "(4 => IsOnlyNumberInputText = True) => (3213/4 => IsOnlyNumberInputText = False)")]
+        public void Test9()
+        {
+            string input = "4";
+
+            var classInstance = Activator.CreateInstance(typeof(CoinViewModel));
+            var VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
+
+            if(classInstance is CoinViewModel viewModel)
+            {
+                var result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
+
+                Assert.True(result);
+                Assert.True(viewModel.IsOnlyNumberInputText);
+
+                string input2 = "3213/4";
+
+                result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input2 });
+
+                Assert.True(result);
+                Assert.False(viewModel.IsOnlyNumberInputText);
+            }
+        }
     }
 }
