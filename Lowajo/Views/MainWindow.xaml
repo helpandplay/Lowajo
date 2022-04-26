@@ -68,13 +68,13 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <component:ImageButton Source="{DynamicResource Coin}" ClickCommand="{Binding OnClickCoinCommand}"/>
+                    <component:ImageButton Source="{DynamicResource Coin}" x:Name="CoinButton" Click="CoinButton_Click"/>
                 </Grid>
                 <Grid Grid.Column="1">
                     <component:ImageButton Source="{DynamicResource Alarm}"/>
                 </Grid>
                 <Grid Grid.Column="2">
-                    <component:ImageButton Source="{DynamicResource Setting}" ClickCommand="{Binding OnClickSettingCommand}"/>
+                    <component:ImageButton Source="{DynamicResource Setting}" x:Name="SettingButton" Click="SettingButton_Click"/>
                 </Grid>
             </Grid>
         </Grid>

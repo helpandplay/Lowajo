@@ -1,5 +1,4 @@
 ﻿using Lowajo.ViewModel.Base;
-using Microsoft.Toolkit.Mvvm.Input;
 using System;
 using System.Windows;
 using System.Windows.Input;
@@ -12,24 +11,10 @@ namespace Lowajo.ViewModel
         private bool isClicking = false;
         private readonly FrameworkElement controlCursorGrab;
 
-        public ICommand OnClickSettingCommand { get; private set; }
-        public ICommand OnClickCoinCommand { get; private set; }
 
         public MainViewModel()
         {
-            OnClickSettingCommand = new RelayCommand(OnClickSetting);
-            OnClickCoinCommand = new RelayCommand(OnClickCoin);
             controlCursorGrab = (FrameworkElement)Application.Current.TryFindResource("CursorGrab");
-        }
-
-        private void OnClickCoin()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnClickSetting()
-        {
-
         }
 
         /// <summary>
@@ -39,7 +24,7 @@ namespace Lowajo.ViewModel
         /// <param name="e"></param>
         public void OnLoaded(object sender, RoutedEventArgs e)
         {
-            if (sender is Window window)
+            if(sender is Window window)
             {
                 window.Topmost = true;
             }
@@ -51,7 +36,7 @@ namespace Lowajo.ViewModel
         /// <param name="e"></param>
         public void OnMouseEnter(object sender, MouseEventArgs e)
         {
-            if (isClicking ||
+            if(isClicking ||
                 isMouseEnter ||
                 sender is not FrameworkElement element) return;
 
@@ -65,7 +50,7 @@ namespace Lowajo.ViewModel
         /// <param name="e"></param>
         public void OnMouseLeave(object sender, MouseEventArgs e)
         {
-            if (isClicking ||
+            if(isClicking ||
                 !isMouseEnter ||
                 sender is not FrameworkElement element) return;
 
@@ -79,20 +64,20 @@ namespace Lowajo.ViewModel
         /// <param name="e"></param>
         public void OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (isClicking ||
+            if(isClicking ||
                 !isMouseEnter ||
                 e.LeftButton != MouseButtonState.Pressed
                 ) return;
-            if (sender is not FrameworkElement element) return;
+            if(sender is not FrameworkElement element) return;
 
             isClicking = true;
             object CursorGrabbing = Application.Current.TryFindResource("CursorGrabbing");
-            element.Cursor = (CursorGrabbing as FrameworkElement)?.Cursor;
+            element.Cursor = ( CursorGrabbing as FrameworkElement )?.Cursor;
 
             element.Dispatcher.BeginInvoke(new Action(() =>
             {
                 Application.Current.MainWindow.DragMove();
-                if (e.LeftButton == MouseButtonState.Released) OnMouseUp(sender, e);
+                if(e.LeftButton == MouseButtonState.Released) OnMouseUp(sender, e);
             }));
         }
         /// <summary>
@@ -103,7 +88,7 @@ namespace Lowajo.ViewModel
         /// <param name="e"></param>
         private void OnMouseUp(object sender, MouseButtonEventArgs e)
         {
-            if (!isClicking ||
+            if(!isClicking ||
                 e.LeftButton != MouseButtonState.Released ||
                 sender is not FrameworkElement element) return;
 
