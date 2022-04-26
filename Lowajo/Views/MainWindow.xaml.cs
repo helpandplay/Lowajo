@@ -25,11 +25,7 @@ namespace Lowajo
                 DataContext = App.Current.Services.GetService(typeof(CoinViewModel)),
             };
             coinWindow.SetPositionFromParentWindow(this);
-
-            if(coinWindow.ShowDialog() == true)
-            {
-
-            }
+            coinWindow.Show();
         }
 
         private void SettingButton_Click(object sender, RoutedEventArgs e)
@@ -41,10 +37,7 @@ namespace Lowajo
             settingWindow.Left = this.Left + this.Width - settingWindow.Width;
             settingWindow.Top = this.Top + this.Height - settingWindow.Height;
 
-            if(settingWindow.ShowDialog() == true)
-            {
-
-            }
+            settingWindow.Show();
         }
     }
 }
