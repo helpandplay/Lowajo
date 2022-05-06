@@ -2,7 +2,7 @@
 
 namespace Lowajo.ViewModel.Base
 {
-    public class ViewModelBase : ObservableObject
-    {
-    }
+  public class ViewModelBase : ObservableObject
+  {
+  }
 }
