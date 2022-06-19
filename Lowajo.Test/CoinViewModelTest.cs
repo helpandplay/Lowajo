@@ -7,15 +7,15 @@ namespace Lowajo.Test
   public class CoinViewModelTest
   {
     [Trait("CoinViewModel", "VaildateInputText Method Test")]
-    [Fact(DisplayName = "string.Emply => False")]
+    [Fact(DisplayName = "string.Empty => False")]
     public void Test1()
     {
       string input = "";
 
-      var classInstance = Activator.CreateInstance(typeof(CoinViewModel));
-      var VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
+      object? classInstance = Activator.CreateInstance(typeof(CoinViewModel));
+      System.Reflection.MethodInfo? VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
 
-      var result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
+      bool? result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
 
       Assert.False(result);
     }
@@ -25,10 +25,10 @@ namespace Lowajo.Test
     {
       string input = "8";
 
-      var classInstance = Activator.CreateInstance(typeof(CoinViewModel));
-      var VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
+      object? classInstance = Activator.CreateInstance(typeof(CoinViewModel));
+      System.Reflection.MethodInfo? VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
 
-      var result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
+      bool? result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
 
       Assert.True(result);
     }
@@ -38,10 +38,10 @@ namespace Lowajo.Test
     {
       string input = "321321";
 
-      var classInstance = Activator.CreateInstance(typeof(CoinViewModel));
-      var VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
+      object? classInstance = Activator.CreateInstance(typeof(CoinViewModel));
+      System.Reflection.MethodInfo? VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
 
-      var result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
+      bool? result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
 
       Assert.True(result);
     }
@@ -51,10 +51,10 @@ namespace Lowajo.Test
     {
       string input = "321321/";
 
-      var classInstance = Activator.CreateInstance(typeof(CoinViewModel));
-      var VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
+      object? classInstance = Activator.CreateInstance(typeof(CoinViewModel));
+      System.Reflection.MethodInfo? VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
 
-      var result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
+      bool? result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
 
       Assert.False(result);
     }
@@ -64,10 +64,10 @@ namespace Lowajo.Test
     {
       string input = "3213/443";
 
-      var classInstance = Activator.CreateInstance(typeof(CoinViewModel));
-      var VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
+      object? classInstance = Activator.CreateInstance(typeof(CoinViewModel));
+      System.Reflection.MethodInfo? VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
 
-      var result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
+      bool? result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
 
       Assert.False(result);
     }
@@ -77,10 +77,10 @@ namespace Lowajo.Test
     {
       string input = "/231";
 
-      var classInstance = Activator.CreateInstance(typeof(CoinViewModel));
-      var VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
+      object? classInstance = Activator.CreateInstance(typeof(CoinViewModel));
+      System.Reflection.MethodInfo? VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
 
-      var result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
+      bool? result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
 
       Assert.False(result);
     }
@@ -90,10 +90,10 @@ namespace Lowajo.Test
     {
       string input = "3213/4";
 
-      var classInstance = Activator.CreateInstance(typeof(CoinViewModel));
-      var VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
+      object? classInstance = Activator.CreateInstance(typeof(CoinViewModel));
+      System.Reflection.MethodInfo? VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
 
-      var result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
+      bool? result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
 
       Assert.True(result);
     }
@@ -103,10 +103,10 @@ namespace Lowajo.Test
     {
       string input = "4";
 
-      var classInstance = Activator.CreateInstance(typeof(CoinViewModel));
-      var VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
+      object? classInstance = Activator.CreateInstance(typeof(CoinViewModel));
+      System.Reflection.MethodInfo? VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
 
-      var result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
+      bool? result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
 
       Assert.True(result);
     }
@@ -116,12 +116,12 @@ namespace Lowajo.Test
     {
       string input = "4";
 
-      var classInstance = Activator.CreateInstance(typeof(CoinViewModel));
-      var VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
+      object? classInstance = Activator.CreateInstance(typeof(CoinViewModel));
+      System.Reflection.MethodInfo? VaildateInputText = Commons.GetPrivateMethod<CoinViewModel>("VaildateInputText");
 
       if(classInstance is CoinViewModel viewModel)
       {
-        var result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
+        bool? result = (bool?)VaildateInputText.Invoke(classInstance, new object[] { input });
 
         Assert.True(result);
         Assert.True(viewModel.IsOnlyNumberInputText);

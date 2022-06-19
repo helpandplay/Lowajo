@@ -39,10 +39,8 @@
         </Grid>
 
         <Grid Grid.Row="3" Style="{StaticResource GridRowContainer}">
-            <TextBlock>
-                <TextBlock Text="결과 값 : "/>
-                <TextBlock Text="{Binding ResultText, Mode=OneWay}"/>
-            </TextBlock>
-        </Grid>
+        <TextBlock Text="{Binding ResultText, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+    </Grid>
     </Grid>
 </base:SubWindowBase>

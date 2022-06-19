@@ -13,7 +13,7 @@ namespace Lowajo.Views.Base
 
     private void SubWindowBase_Deactivated(object? sender, System.EventArgs e)
     {
-      DelayClose();
+      //DelayClose();
     }
 
     private async void DelayClose()

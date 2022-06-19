@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Lowajo.ViewModel\Lowajo.ViewModel.csproj" />
+    <ProjectReference Include="..\Lowajo\Lowajo.csproj" />
   </ItemGroup>
 
 </Project>
